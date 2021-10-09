@@ -15,18 +15,32 @@
 #pragma once
 #ifndef __STANDARD_DECK__
 #define __STANDARD_DECK__
+#include <vector>
 
 #include "PlayingCard.h"
 
 class StandardDeck
 {
+private:
+	StandardDeck();
+
 	// Initialization:
+	void Initialize();
 
 	// Rule of three:
+	~StandardDeck();
+	StandardDeck(const StandardDeck& deck2);
+	StandardDeck &operator=(const StandardDeck& deck2);
 
-	// Accessors:
+	// Accessors
+	int CardsRemaining();
 
-	// Mutators:
+	// Utility
+	PlayingCard DrawNextCard();
+	PlayingCard DrawRandomCard();
+	void Shuffle();
+private:
+	std::vector<PlayingCard> m_deck;
 };
 
 #endif /* defined (__STANDARD_DECK__) */

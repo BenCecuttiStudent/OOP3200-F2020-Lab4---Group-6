@@ -27,5 +27,3 @@ int main()
 
 	// Reset the deck and show the result
 }
-
-

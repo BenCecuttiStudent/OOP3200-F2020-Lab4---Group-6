@@ -19,6 +19,7 @@
 
 class PlayingCard
 {
+public:
 	/************************************************************************************
 		 *	Static arrays of strings to represent the ranks and suits
 		 ************************************************************************************/
@@ -29,6 +30,7 @@ class PlayingCard
 
 	// by default, the card is a face up Ace of Hearts with a value of 1
 	PlayingCard();
+	PlayingCard(const PlayingCard& new_card);
 
 	// Parametrized constructors
 	PlayingCard(const std::string& rank, const std::string& suit, int value = DEFAULT_VALUE_WANTED, bool face_up = true);

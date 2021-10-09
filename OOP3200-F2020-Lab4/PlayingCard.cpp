@@ -39,6 +39,13 @@ PlayingCard::PlayingCard() : IsFaceUp(true), myRankIndex(1), mySuitIndex(1), myV
 {
 }
 
+PlayingCard::PlayingCard(const PlayingCard& new_card)
+{
+	SetRank(new_card.GetRank());
+	SetSuit(new_card.GetSuit());
+	SetValue(new_card.GetValue());
+}
+
 /** Parametrized Constructor for PlayingCard class
  *  @param	rank: string
  *  @param	suit: string
