@@ -21,11 +21,11 @@
 
 class StandardDeck
 {
-private:
+public:
 	StandardDeck();
 
 	// Initialization:
-	void Initialize();
+	virtual void Initialize();
 
 	// Rule of three:
 	~StandardDeck();
@@ -33,11 +33,12 @@ private:
 	StandardDeck &operator=(const StandardDeck& deck2);
 
 	// Accessors
-	int CardsRemaining();
+	int CardsRemaining() const;
 
 	// Utility
 	PlayingCard DrawNextCard();
 	PlayingCard DrawRandomCard();
+	static void ShowCard(PlayingCard card);
 	void Shuffle();
 private:
 	std::vector<PlayingCard> m_deck;
