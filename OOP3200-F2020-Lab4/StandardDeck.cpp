@@ -5,6 +5,8 @@
 #include "StandardDeck.h"
 #include <iostream>
 #include <algorithm>
+#include <random>
+
 StandardDeck::StandardDeck()
 {
 	m_deck.begin();
@@ -89,16 +91,10 @@ PlayingCard StandardDeck::DrawRandomCard()
 	return tempCard;
 }
 
-// Last thing that needs to be done //
+// Shuffles remaining cards //
 void StandardDeck::Shuffle()
 {
-	for (int x = 0; x <= this->CardsRemaining(); x++)
-	{
-		const int num = rand() % m_deck.size();
-		std::cout << x << ": ";
-		PlayingCard tempCard = m_deck[num];
-		ShowCard(tempCard);
-	}
+	std::shuffle(m_deck.begin(), m_deck.end(), std::mt19937(std::random_device()()));
 }
 
 // Output card info neatly

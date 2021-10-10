@@ -20,12 +20,6 @@ int main()
 	StandardDeck* deck1 = new StandardDeck;
 	std::cout << "Deck of " << deck1->CardsRemaining() <<  " cards created\n" << std::endl;
 
-	/*for(int x = 1; x <= 10; x++)
-		{
-			std::cout << x << ": ";
-			deck1->DrawRandomCard();
-		}*/
-
 	// Draw the next card and show it
 	std::cout << "First Card is a: ";
 	deck1->DrawNextCard();
@@ -38,9 +32,13 @@ int main()
 	std::cout << "There are " << deck1->CardsRemaining() << " cards remaining" << std::endl;
 	
 	// Shuffle the deck and show the result
-	std::cout << "Deck Shuffled!" << std::endl;
-	//deck1->Shuffle();
-	
+	std::cout << "\nDeck Shuffled!" << std::endl;
+	deck1->Shuffle();
+
+	// Show the first card on the shuffled deck
+	std::cout << "First Card is a: ";
+	deck1->DrawNextCard();
+
 	// Reset the deck and show the result
 	deck1->Initialize();
 	std::cout << "\nDeck of " << deck1->CardsRemaining() << " cards has been reset" << std::endl;
